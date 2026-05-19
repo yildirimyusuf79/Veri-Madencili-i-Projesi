@@ -1,50 +1,50 @@
-# Telco Customer Churn Siniflandirma Projesi
+# Telco Customer Churn Sınıflandırma Projesi
 
-Bu proje, telekomunikasyon musterilerinin churn (ayrilma) olasiligini tahmin etmek icin uctan uca bir veri madenciligi calismasi sunar. Calisma; veri temizleme, kesifsel veri analizi (EDA), ozellik muhendisligi, farkli model denemeleri ve SMOTE ile sinif dengesizligi yonetimini kapsar.
+Bu proje, telekomünikasyon müşterilerinin churn (ayrılma) olasılığını tahmin etmek için uçtan uca bir veri madenciliği çalışması sunar. Çalışma; veri temizleme, keşifsel veri analizi (EDA), özellik mühendisliği, farklı model denemeleri ve SMOTE ile sınıf dengesizliği yönetimini kapsar.
 
-## Proje Ozeti
+## Proje Özeti
 
-- Problem: Musterinin hizmetten ayrilip ayrilmayacagini tahmin etmek
+- Problem: Müşterinin hizmetten ayrılıp ayrılmayacağını tahmin etmek
 - Veri seti: IBM Telco Customer Churn veri seti
-- Hedef degisken: `Churn`
-- Yaklasim: EDA + ozellik muhendisligi + model karsilastirma + dengeleme (SMOTE)
+- Hedef değişken: `Churn`
+- Yaklaşım: EDA + özellik mühendisliği + model karşılaştırma + dengeleme (SMOTE)
 
-## Dosya Yapisi
+## Dosya Yapısı
 
-- `Proje.ipynb`: Tum analiz, gorsellestirme ve modelleme adimlari
+- `Proje.ipynb`: Tüm analiz, görselleştirme ve modelleme adımları
 - `WA_Fn-UseC_-Telco-Customer-Churn.csv`: Ham veri seti
 
-## Kullanim Senaryosu
+## Kullanım Senaryosu
 
-Bu notebook, su sorulara yanit vermeyi hedefler:
+Bu notebook, şu sorulara yanıt vermeyi hedefler:
 
-- Hangi musteri segmentlerinde churn riski daha yuksek?
-- Hangi degiskenler churn ile daha guclu iliski gosteriyor?
-- Hangi model/olcekleme kombinasyonu daha iyi performans veriyor?
-- Sinif dengesizligi giderildiginde model davranisi nasil degisiyor?
+- Hangi müşteri segmentlerinde churn riski daha yüksek?
+- Hangi değişkenler churn ile daha güçlü ilişki gösteriyor?
+- Hangi model/ölçekleme kombinasyonu daha iyi performans veriyor?
+- Sınıf dengesizliği giderildiğinde model davranışı nasıl değişiyor?
 
-## Yontem ve Is Akisi
+## Yöntem ve İş Akışı
 
-1. Veri yukleme ve ilk inceleme
-2. Veri temizleme ve donusumler
-3. EDA (dagilimlar, churn bazli karsilastirmalar, grafikler)
-4. Ozellik muhendisligi (servis sayisi, musteri degeri, churn risk skoru vb.)
-5. Model karsilastirma:
+1. Veri yükleme ve ilk inceleme
+2. Veri temizleme ve dönüşümler
+3. EDA (dağılımlar, churn bazlı karşılaştırmalar, grafikler)
+4. Özellik mühendisliği (servis sayısı, müşteri değeri, churn risk skoru vb.)
+5. Model karşılaştırma:
 	- Logistic Regression
 	- Random Forest
 	- SVM
-6. Sinif dengesizligi icin SMOTE
-7. Final degerlendirme (accuracy, confusion matrix, classification report)
+6. Sınıf dengesizliği için SMOTE
+7. Final değerlendirme (accuracy, confusion matrix, classification report)
 
-## One Cikan Bulgular
+## Öne Çıkan Bulgular
 
-- Notebook ciktilarinda churn orani yaklasik `%26.5` seviyesindedir.
-- Farkli olcekleme secenekleri altinda model karsilastirmasi yapilmistir.
-- SMOTE sonrasi egitim seti dengelenmis ve final model degerlendirmesi yapilmistir.
+- Notebook çıktılarında churn oranı yaklaşık `%26.5` seviyesindedir.
+- Farklı ölçekleme seçenekleri altında model karşılaştırması yapılmıştır.
+- SMOTE sonrası eğitim seti dengelenmiş ve final model değerlendirmesi yapılmıştır.
 
-Not: Son metrikler notebook hucrelerinin yeniden calistirilmasina gore degisebilir.
+Not: Son metrikler notebook hücrelerinin yeniden çalıştırılmasına göre değişebilir.
 
-## Kullanilan Teknolojiler
+## Kullanılan Teknolojiler
 
 - Python 3.x
 - Jupyter Notebook / VS Code Notebook
@@ -55,43 +55,43 @@ Not: Son metrikler notebook hucrelerinin yeniden calistirilmasina gore degisebil
 
 ## Kurulum
 
-1. Depoyu klonlayin:
+1. Depoyu klonlayın:
 
 ```bash
 git clone https://github.com/yildirimyusuf79/Veri-Madencili-i-Projesi.git
 cd Veri-Madencili-i-Projesi
 ```
 
-2. Bagimliliklari kurun:
+2. Bağımlılıkları kurun:
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn jupyter
 ```
 
-3. Notebook'u acin:
+3. Notebook'u açın:
 
 ```bash
 jupyter notebook Proje.ipynb
 ```
 
-## Tekrar Uretilebilirlik
+## Tekrar Üretilebilirlik
 
-- Notebook hucrelerini ustten alta sirayla calistiriniz.
-- Rastgelelik iceren adimlarda `random_state=42` kullanilmistir.
-- Sonuclarin birebir ayni olmasi icin benzer kutuphane surumleri onerilir.
+- Notebook hücrelerini üstten alta sırayla çalıştırınız.
+- Rastgelelik içeren adımlarda `random_state=42` kullanılmıştır.
+- Sonuçların birebir aynı olması için benzer kütüphane sürümleri önerilir.
 
-## Gelistirme Fikirleri
+## Geliştirme Fikirleri
 
 - Hyperparameter tuning (GridSearchCV / RandomizedSearchCV)
-- ROC-AUC, PR-AUC gibi ek metriklerle detayli degerlendirme
-- Model yorumlanabilirligi (SHAP, feature importance analizi)
-- Pipeline yapisi ile daha moduler ve temiz deney akisi
+- ROC-AUC, PR-AUC gibi ek metriklerle detaylı değerlendirme
+- Model yorumlanabilirliği (SHAP, feature importance analizi)
+- Pipeline yapısı ile daha modüler ve temiz deney akışı
 
 ## Lisans ve Kaynak
 
-Bu calisma egitsel amaclarla hazirlanmistir. Veri seti, Telco Customer Churn acik veri kaynagina dayanmaktadir.
+Bu çalışma eğitsel amaçlarla hazırlanmıştır. Veri seti, Telco Customer Churn açık veri kaynağına dayanmaktadır.
 
-## Iletisim
+## İletişim
 
 - GitHub: [github.com/yildirimyusuf79](https://github.com/yildirimyusuf79)
 - LinkedIn: [www.linkedin.com/in/yusuf-yıldırım-190445295](https://www.linkedin.com/in/yusuf-yıldırım-190445295)
